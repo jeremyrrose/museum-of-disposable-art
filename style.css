@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,800&display=swap');
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    padding: 20px 0 0 0;
+    display: grid;
+    grid-template-columns: minmax(0px, 1fr) minmax(120px, 2fr) 140px minmax(120px, 2fr) minmax(0px, 1fr);
+    grid-template-rows: 160px auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    grid-column: 2 / span 3;
+    display: grid;
+    grid-template-columns: 370px auto;
+    grid-template-rows: 60px 54px 50px;
+    font-size: 28px;
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+}
+
+header a {
+    color: black;
+    font-weight: bold;
+}
+
+.logo {
+    grid-row: 1 / span 2;
+    font-size: 120px;
+    font-weight: 700;
+    line-height: .8em;
+    letter-spacing: -.06em;
+}
+
+.logo > img {
+    height: 81px;
+    position: relative;
+    top: 9px;
+    left: 7px;
+}
+
+.submenu {
+    display: flex;
+    align-self: right;
+}
+
+.submenu > div {
+    flex: 1;
+    padding: 6px 0 0 0;
+}
+
+.submenu a {
+    color: #fdbfb3;
+}
+
+.subtitle {
+    
+}
+
+.menu {
+    grid-column: 1 / -1;
+}
+
+.menu > div {
+    padding: 0 62px 0 6px;
+}
+
+main {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0px, 1fr) minmax(120px, 2fr) 140px minmax(120px, 2fr) minmax(0px, 1fr);
+    grid-template-rows: repeat(3, 40px 300px 18px);
+    grid-auto-flow: dense;
+}
+
+.category {
+    grid-column: span 1;
+    padding: 8px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #626289;
+}
+
+.teal {
+    background: #107595;
+}
+
+.pink {
+    background: #fdbfb3;
+}
+
+.yellow {
+    background: #fcf594;
+}
+
+.purple {
+    background: #626289;
+}
+
+spacer {
+    grid-column: span 1;
+    padding: 0;
+}
+
+.title {
+    padding: 12px;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.title.left {
+    grid-column: 2 / 3;
+    padding-left: 0px;
+}
+
+.title.right {
+    grid-column: 4 / span 1;
+    padding-right: 0px;
+}
+
+.photo {
+    background: url('images/castlehill.jpg');
+    grid-row: span 2;
+}
+
+.photo.right {
+    grid-column: 3 / -1;
+}
+
+.photo.left {
+    grid-column: 1 / 4;
+}
+
+.gap {
+    grid-column: 1 / -1;
+}
+
+footer {
+    grid-column: 2 / span 3;
+    background: #626289;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 0 44px 0;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.iterationInfo {
+    padding: 6px 0 0 0;
+}
+
+.iterationInfo > span {
+    font-weight: normal;
+}
+
+.connect {
+    text-align: right;
+}
+
+.connect > input {
+    height: 20px;
+    width: 380px;
+    background: #626289;
+    margin-right: 8px;
+    border: 0;
+    border-bottom: 3px solid #ffffff;
+}
+
+.connect > img {
+    height: 30px;
+    position: relative;
+    top: 8px;
+}
+
+.connect > div {
+    margin: 40px 0 0 0;
+}
+
+.connect > div > img {
+    height: 34px;
+    margin: 0 0 0 16px;
+}
+
+.footerBottom {
+    grid-column: span 2;
+    padding: 44px 0 44px 0;
+    font-weight: normal;
+    font-size: 24px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.footerBottom > .logo > img {
+    top: 1px;
+    left: 7px;
+}
+
+
+@media (max-width: 880px) {
+
+    body, main {
+        grid-template-columns: 4px minmax(120px, 2fr) 140px minmax(120px, 2fr) 4px;
+    }
+
+    header {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header {
+        grid-column: 1 / -1;
+    }
+
+    .category {
+        grid-column: span 2;
+    }
+    .title.left {
+        grid-column: 1 / 4;
+    }
+    
+    .title.right {
+        grid-column: 4 / -1;
+    }
+    
+    .photo.right {
+        grid-column: 4 / -1;
+    }
+    
+    .photo.left {
+        grid-column: 1 / 4;
+    }
+/*
+
+    footer {
+        grid-column: 1 / -1;
+    } */
+
+}
