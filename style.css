@@ -2,15 +2,21 @@
 
 body {
     font-family: 'Work Sans', sans-serif;
-    padding: 20px 0 0 0;
+    padding: 26px 0 0 0;
     display: grid;
     grid-template-columns: minmax(0px, 1fr) minmax(120px, 2fr) 140px minmax(120px, 2fr) minmax(0px, 1fr);
-    grid-template-rows: 160px auto;
+    grid-template-rows: 180px auto;
+    margin: 0;
 }
 
 a {
     text-decoration: none;
+    font-weight: bold;
     color: black;
+}
+
+a:hover {
+    color: #fdbfb3;
 }
 
 header {
@@ -24,11 +30,6 @@ header {
 header div {
     display: flex;
     flex-direction: row;
-}
-
-header a {
-    color: black;
-    font-weight: bold;
 }
 
 .logo {
@@ -57,19 +58,24 @@ header a {
 }
 
 .submenu a {
+    color: #626289;
+}
+
+.submenu a:hover {
     color: #fdbfb3;
 }
 
 .subtitle {
-    
+    grid-row: 2 / 2;
 }
 
 .menu {
     grid-column: 1 / -1;
+    justify-content: space-between;
+
 }
 
 .menu > div {
-    padding: 0 62px 0 6px;
 }
 
 main {
@@ -125,6 +131,11 @@ spacer {
     padding-right: 0px;
 }
 
+.title:hover a {
+    color: #000000;
+    opacity: .6;
+}
+
 .photo {
     background: url('images/castlehill.jpg');
     grid-row: span 2;
@@ -146,7 +157,7 @@ footer {
     grid-column: 2 / span 3;
     background: #626289;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 340px auto;
     padding: 40px 0 44px 0;
     color: #ffffff;
     font-size: 36px;
@@ -165,19 +176,52 @@ footer {
     text-align: right;
 }
 
-.connect > input {
-    height: 20px;
-    width: 380px;
-    background: #626289;
-    margin-right: 8px;
-    border: 0;
-    border-bottom: 3px solid #ffffff;
+.input {
+    position: relative;
+    top: 6px;
+    display: inline;
 }
 
-.connect > img {
-    height: 30px;
+.input > input {
+    height: 20px;
+    width: 360px;
+    background: #626289;
+    border: 0;
+    border-bottom: 3px solid #ffffff;
+    color: #ffffff;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    padding-top: .8em;
     position: relative;
-    top: 8px;
+}
+
+.input > label {
+    font-weight: normal;
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    font-size: 24px;
+    opacity: .8;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+label div {
+    transition: all .6s;
+}
+
+.input input:focus + label .signup,
+.input input:valid + label .signup {
+    opacity: 0;
+}
+
+.icon {
+    height: 20px;
+    position: relative;
+    top: 2px;
 }
 
 .connect > div {
@@ -198,24 +242,75 @@ footer {
     align-items: flex-end;
 }
 
+.footerBottom > div {
+    flex: 1 6 auto;
+}
+
+.footerBottom > .logo {
+    flex: 5 0 400px;
+}
+
 .footerBottom > .logo > img {
     top: 1px;
     left: 7px;
 }
 
 
-@media (max-width: 880px) {
+@media (max-width: 1200px) {
 
     body, main {
-        grid-template-columns: 4px minmax(120px, 2fr) 140px minmax(120px, 2fr) 4px;
+        grid-template-columns: 40px minmax(120px, 2fr) 140px minmax(120px, 2fr) 40px;
+    }
+
+}
+
+@media (max-width: 900px) {
+    body, main {
+        grid-template-columns: 6px minmax(120px, 2fr) 140px minmax(120px, 2fr) 6px;
+    }
+
+    body {
+        grid-template-rows: 240px auto;
     }
 
     header {
-        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .category {
+        font-size: 16px;
+        padding: 9px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .connect {
+        text-align: left;
+        margin-top: 30px;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footerBottom > .logo {
+        flex-basis: auto;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    body, main {
+        grid-template-columns: 6px minmax(120px, 2fr) 90px minmax(120px, 2fr) 6px;
+    }
 
     header {
         grid-column: 1 / -1;
@@ -225,11 +320,11 @@ footer {
         grid-column: span 2;
     }
     .title.left {
-        grid-column: 1 / 4;
+        grid-column: 2 / 4;
     }
     
     .title.right {
-        grid-column: 4 / -1;
+        grid-column: 3 / 5;
     }
     
     .photo.right {
@@ -237,7 +332,11 @@ footer {
     }
     
     .photo.left {
-        grid-column: 1 / 4;
+        grid-column: 1 / 3;
+    }
+
+    .input input {
+        width: 64%;
     }
 /*
 

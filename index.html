@@ -10,12 +10,12 @@
 <body>
     <header>
         <div class="logo">Mo<img src="images/D.svg">A</div>
+        <div class="subtitle">the museum of disposable art</div>
         <div class="submenu">
             <div><a href="">About</a></div>
-            <div><a href="">Collections</a></div>
-            <div><a href="">Support Us</a></div>
+            <div><a href="">Support</a></div>
+            <div><a href="">Collection</a></div>
         </div>
-        <div class="subtitle">the museum of disposable art</div>
         <div class="menu">
             <div><a href="">Visit</a></div>
             <div><a href="">Magazine</a></div>
@@ -25,24 +25,24 @@
     </header>
     <main>
         <section class="spacer purple"></section>
-        <section class="category">collections // january 2020</section>
+        <section class="category">collection // jan 2020</section>
         <section class="photo right"></section>
         <section class="spacer teal"></section>
-        <section class="title left teal">Maecenas auctor sem ullamcorper auctor placerat</section>
+        <section class="title left teal"><a href="">Maecenas auctor sem ullamcorper auctor placerat</a></section>
         <section class="gap"></section>
 
         <section class="photo left"></section>
-        <section class="category">magazine // january 2020</section>
+        <section class="category">magazine // jan 2020</section>
         <section class="spacer purple"></section>
-        <section class="title right yellow">Donec a lectus ac ex vestibulum varius sagittis ut enim</section>
+        <section class="title right yellow"><a href="">Donec a lectus ac ex vestibulum varius sagittis ut enim</a></section>
         <section class="spacer yellow"></section>
         <section class="gap"></section>
 
         <section class="spacer purple"></section>
-        <section class="category">events // february 2020</section>
+        <section class="category">events // feb 2020</section>
         <section class="photo right"></section>
         <section class="spacer pink"></section>
-        <section class="title left pink">Maecenas laoreet metus sit amet dolor luctus, vitae faucibus metus luctus</section>
+        <section class="title left pink"><a href="">Maecenas laoreet metus sit amet dolor luctus, vitae faucibus metus luctus</a></section>
     </main>
     
     <section class="spacer purple"></section>
@@ -54,7 +54,13 @@
             Brooklyn NY 11221<br>
         </div>
         <div class="connect">
-            <input></input><img src="images/mail icon.png">
+            <div class="input">
+                <input name="email" type="text" required autocomplete="off" />
+                <label for="email">
+                    <div class="signup">Get updates via email</div>
+                    <div><img class="icon" src="images/mail icon.png"></div>
+                </label>
+            </div>
             <div>
                 <img src="images/fb white.png">
                 <img src="images/instagramwhite.png">
@@ -64,7 +70,7 @@
         </div>
         <div class="footerBottom">
             <div class="logo">Mo<img src="images/DWhite.svg">A</div>
-            <div>&nbsp;&nbsp; &copy; 2020 the museum of disposable art</div>
+            <div>&copy; 2020 the museum of disposable art</div>
         </div>
     </footer>
     <section class="spacer purple"></section>    
