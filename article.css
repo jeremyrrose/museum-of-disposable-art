@@ -1,0 +1,120 @@
+.container {
+    grid-column: 1 / -1;
+}
+
+main.article {
+    grid-template-rows: auto auto auto repeat(3, 40px 180px 18px);
+}
+
+.hero {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0px, 1fr) minmax(120px, 1.6fr) 140px minmax(120px, 2.4fr) minmax(0px, 1fr);
+    grid-template-rows: 22vh 14vh 46px 46px;
+    background: url(images/castlehill.jpg);
+}
+
+.hero > .spacer.purple {
+    grid-column: 1 / 1;
+    grid-row: 4 / span 1;
+}
+
+.hero > .spacer.pink {
+    grid-row: 3 / span 1;
+}
+
+.issue {
+    grid-column: 2 / span 1;
+    padding: 8px 8px 8px 0;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.issue.pink {
+    grid-row: 3 / span 1;
+}
+
+.issue.purple {
+    grid-row: 4 / span 1;
+}
+
+.articleTitle {
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 3;
+    padding: 28px 0 28px 28px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hero > .spacer.teal {
+    grid-column: 5 / 5;
+    grid-row: 2 / span 3;
+}
+
+.gap {
+    height: 26px;
+}
+
+article {
+    grid-column: 2 / 5;
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+
+.dek {
+    color: #bcbcbc;
+    font-size: 28px;
+    font-style: italic;
+    padding: 4px 0 4px 32px;
+    border-left: 16px dotted #bcbcbc;
+    margin: 0 0 16px 0;
+}
+
+.byline {
+    text-align: right;
+    margin: 0 0 60px 0;
+}
+
+.byline div span { 
+    color: #626289;
+}
+
+.pull {
+    width: 45%;
+    float: right;
+    color: #bcbcbc;
+    font-size: 26px;
+    font-style: italic;
+    padding: 0 0 0 20px;
+    border-left: 4px dotted #bcbcbc;
+    margin: 12px 0 12px 30px;
+}
+
+.author {
+    margin: 60px 0 0 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.author p {
+    width:320px;
+    font-weight: 100;
+    color: #bcbcbc;
+    font-style: italic;
+    padding: 0 24px 0 20px;
+    border-left: 4px dotted #bcbcbc;
+}
+
+.author img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+@media (min-width: 900px) {
+    
+    .squooshed {
+        grid-template-columns: minmax(0px, .25fr) minmax(120px,2fr) 140px minmax(120px, 2fr) minmax(0px, .5fr)
+    }
+   
+}
