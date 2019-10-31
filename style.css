@@ -225,7 +225,7 @@ main {
     background: #626289;
 }
 
-spacer {
+.spacer {
     grid-column: span 1;
     padding: 0;
 }
@@ -386,10 +386,10 @@ label div {
 
 @media (min-width: 900px) {
     
-    .open + .container {
+    .squooshed {
         grid-template-columns: minmax(0px, .25fr) minmax(120px,2fr) 140px minmax(120px, 2fr) minmax(0px, .5fr)
     }
-    
+   
 }
 
 @media (max-width: 900px) {

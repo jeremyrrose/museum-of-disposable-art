@@ -1,14 +1,17 @@
-let burgerMenu = document.querySelector('.menuframe');
+const main = document.querySelector('main');
+const container = document.querySelector('.container');
+const burgerMenu = document.querySelector('.menuframe');
 // burgerMenu.style.width = "0px";
-let mainMenu = document.querySelector('.menu');
-let hamburger = document.querySelector('.hamburger');
-let mainBurgerIcon = document.querySelector('.mainBurger');
-let sideBurgerIcon = document.querySelector('.burgerButton');
-let menuBurgerDiv = document.querySelector('.menuBurger');
-let arrowIcon = document.querySelector('.arrow');
-let menuItems = document.querySelector('.menuframe').querySelectorAll('a');
-let logo = document.querySelector('.logo');
-let mobileBurger = logo.querySelector('.mobileBurger');
+const mainMenu = document.querySelector('.menu');
+const hamburger = document.querySelector('.hamburger');
+const mainBurgerIcon = document.querySelector('.mainBurger');
+const sideBurgerIcon = document.querySelector('.burgerButton');
+const menuBurgerDiv = document.querySelector('.menuBurger');
+const arrowIcon = document.querySelector('.arrow');
+const menuItems = document.querySelector('.menuframe').querySelectorAll('a');
+const logo = document.querySelector('.logo');
+const mobileBurger = logo.querySelector('.mobileBurger');
+const hero = document.querySelector('.hero');
 
 const opacitizer = (arr, initTimeout = 0, inc = 50) => {
     if (burgerMenu.classList[1]) {
@@ -40,21 +43,21 @@ const menuToggle = () => {
         if (!burgerMenu.classList[1]) {
             hamburger.style.opacity = 0;
             setTimeout(() => hamburger.style.width = "0px", 600);
-            // mainMenu.style.gridTemplateColumns = "0px repeat(4, 1fr)";
             sideBurgerIcon.style.opacity = 1;
             burgerMenu.addEventListener('transitionend',() => opacitizer(menuItems, 0, 40));
             burgerMenu.classList.add('open');
+            hero.classList.add('squooshed');
+            main.classList.add('squooshed');
+            container.classList.add('squooshed');
         } else {
             sideBurgerIcon.style.opacity = 0;
             burgerMenu.classList.remove('open');
-            // mainMenu.style.gridTemplateColumns = "50px repeat(4, 1fr)";
+            main.classList.remove('squooshed');
+            container.classList.remove('squooshed');
+            hero.classList.remove('squooshed');
             hamburger.style.width = "80px";
             hamburger.style.opacity = 1;
             menuItems.forEach(item => item.style.opacity = 0);
-            // timeouts.forEach(item => clearTimeout(item));
-            // menuItems.forEach(item => {
-            //     console.log(item, item.style.opacity); item.style.opacity = 0;
-            // });
         }
     }
 }
