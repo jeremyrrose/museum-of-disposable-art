@@ -1,1 +1,1 @@
-# museum-of-disposable-art
+# the museum of disposable art
