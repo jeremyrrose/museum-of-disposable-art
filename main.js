@@ -9,6 +9,7 @@ const menuBurgerDiv = document.querySelector('.menuBurger');
 const arrowIcon = document.querySelector('.arrow');
 const menuItems = document.querySelector('.menuframe').querySelectorAll('a');
 const logo = document.querySelector('.logo');
+const logoClick = document.querySelector('.logoClick');
 const mobileBurger = logo.querySelector('.mobileBurger');
 const hero = document.querySelector('.hero');
 const photos = document.querySelectorAll('.photo');
@@ -93,7 +94,7 @@ const menuToggle = () => {
 }
 
 // Event listeners
-logo.addEventListener('click', () => window.location.href = "index.html");
+logoClick.addEventListener('click', () => window.location.href = "index.html");
 
 menuBurgerDiv.addEventListener('click', menuToggle);
 menuBurgerDiv.addEventListener('mouseover',function () {

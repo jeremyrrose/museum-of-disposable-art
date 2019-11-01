@@ -41,7 +41,7 @@ a:hover {
     flex-direction: column;
 }
 
-.burgermenu > div {
+.burgermenu div {
     padding: 12px 12px 0px 12px;
     display: flex;
     flex-direction: column;
@@ -192,6 +192,11 @@ header {
 .burgerButton, .mainBurger {
     height: 30px;
     transition: 1s;
+    cursor: pointer;
+}
+
+.arrow {
+    cursor: pointer;
 }
 
 main {
@@ -253,7 +258,7 @@ main {
 }
 
 .photo {
-    background-image: url('images/castlehill.jpg');
+    background: #626289;
     background-size: cover;
     background-position-y: 20%;
     grid-row: span 2;
@@ -385,6 +390,32 @@ label div {
         grid-template-columns: 40px minmax(120px, 2fr) 140px minmax(120px, 2fr) 40px;
     }
 
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .connect {
+        text-align: left;
+        margin-top: 30px;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footerBottom > .bottomLogo {
+        flex-basis: auto;
+    }
 }
 
 @media (min-width: 900px) {
@@ -411,7 +442,7 @@ label div {
     .menuframe.open {
         width: 100%;
         top: 160px;
-        z-index: 999;
+        z-index: 997;
         height: 100vh;
     }
 
@@ -425,7 +456,7 @@ label div {
         padding: 20px 6px 20px 10px;
         top: 100px;
         width: 100%;
-        z-index: 998;
+        z-index: 997;
         background: #ffffff;
     }
 
@@ -461,6 +492,8 @@ label div {
 
     .mobileBurger {
         display: inline;
+        position: relative;
+        z-index: 999;
     }
 
     .hamburger {
@@ -513,8 +546,13 @@ label div {
         grid-template-columns: 6px minmax(120px, 2fr) 90px minmax(120px, 2fr) 6px;
     }
 
+    .chillSidebar {
+        color: #efefef;
+    }
+
     header {
         grid-column: 1 / -1;
+        font-size: 20px;
     }
 
     .logo {
@@ -530,6 +568,11 @@ label div {
     .category {
         grid-column: span 2;
     }
+
+    .title {
+        font-size: 24px;
+    }
+
     .title.left {
         grid-column: 2 / 4;
     }
@@ -548,6 +591,10 @@ label div {
 
     .input input {
         width: 82%;
+    }
+
+    .input > label {
+        font-size: 16px;
     }
 /*
 
