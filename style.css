@@ -131,6 +131,7 @@ header {
     letter-spacing: -.06em;
     background: #ffffff;
     transition: all .8s;
+    cursor: pointer;
 }
 
 .mobileBurger {
@@ -252,7 +253,9 @@ main {
 }
 
 .photo {
-    background: url('images/castlehill.jpg');
+    background-image: url('images/castlehill.jpg');
+    background-size: cover;
+    background-position-y: 20%;
     grid-row: span 2;
 }
 

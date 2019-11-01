@@ -1,7 +1,6 @@
 const main = document.querySelector('main');
 const container = document.querySelector('.container');
 const burgerMenu = document.querySelector('.menuframe');
-// burgerMenu.style.width = "0px";
 const mainMenu = document.querySelector('.menu');
 const hamburger = document.querySelector('.hamburger');
 const mainBurgerIcon = document.querySelector('.mainBurger');
@@ -12,7 +11,37 @@ const menuItems = document.querySelector('.menuframe').querySelectorAll('a');
 const logo = document.querySelector('.logo');
 const mobileBurger = logo.querySelector('.mobileBurger');
 const hero = document.querySelector('.hero');
+const photos = document.querySelectorAll('.photo');
+const morePhotos = document.querySelectorAll('.moreImage');
 
+// Randomize photos for demo purposes
+const uniqueRands = (min, max, quant) => {
+    let tempArr = [];
+    while (tempArr.length < quant) {
+        let num = Math.floor(Math.random() * max) + min;
+        if (!tempArr.includes(num)) {
+            tempArr.push(num);    
+        }        
+    }
+    return tempArr;
+}
+
+if (photos.length > 0) {
+    let photoNums = uniqueRands(1,9,photos.length);
+    photos.forEach((item) => item.style.backgroundImage = `url(images/${photoNums.pop()}.jpg)`);
+}
+
+if (morePhotos.length > 0) {
+    let morePhotoNums = uniqueRands(1,9,morePhotos.length);
+    morePhotos.forEach(item => item.style.backgroundImage = `url(images/${morePhotoNums.pop()}.jpg)`);
+}
+
+if (hero) {         
+    let num = Math.floor(Math.random() * 9) + 1;
+    hero.style.backgroundImage = `url(images/${num}.jpg)`;
+}
+
+// Create menu item animation
 const opacitizer = (arr, initTimeout = 0, inc = 50) => {
     if (burgerMenu.classList[1]) {
         for (let i = 0; i < arr.length; i++) {
@@ -22,6 +51,7 @@ const opacitizer = (arr, initTimeout = 0, inc = 50) => {
     }
 }
 
+// Toggle menu (differently depending on screen size)
 const menuToggle = () => {
     if (window.matchMedia("(max-width: 900px)").matches) {
         if (!burgerMenu.classList[1]) {
@@ -46,7 +76,7 @@ const menuToggle = () => {
             sideBurgerIcon.style.opacity = 1;
             burgerMenu.addEventListener('transitionend',() => opacitizer(menuItems, 0, 40));
             burgerMenu.classList.add('open');
-            hero.classList.add('squooshed');
+            if (hero) { hero.classList.add('squooshed'); }
             main.classList.add('squooshed');
             container.classList.add('squooshed');
         } else {
@@ -54,13 +84,16 @@ const menuToggle = () => {
             burgerMenu.classList.remove('open');
             main.classList.remove('squooshed');
             container.classList.remove('squooshed');
-            hero.classList.remove('squooshed');
+            if (hero) { hero.classList.remove('squooshed'); }
             hamburger.style.width = "80px";
             hamburger.style.opacity = 1;
             menuItems.forEach(item => item.style.opacity = 0);
         }
     }
 }
+
+// Event listeners
+logo.addEventListener('click', () => window.location.href = "index.html");
 
 menuBurgerDiv.addEventListener('click', menuToggle);
 menuBurgerDiv.addEventListener('mouseover',function () {
@@ -80,6 +113,7 @@ mobileBurger.addEventListener('click',menuToggle);
 mobileBurger.addEventListener('mouseover',() => mobileBurger.setAttribute('src','images/hamburgerHover.svg'));
 mobileBurger.addEventListener('mouseout',() => mobileBurger.setAttribute('src','images/hamburger.svg'));
 
+// Sticks hamburger at screen top on scroll in mobile / tablet
 let stickyPoint = logo.offsetTop;
 const stickinator = () => {
     if (window.matchMedia("(max-width: 900px)").matches) {
@@ -90,5 +124,4 @@ const stickinator = () => {
         }
     }
 }
-
 window.onscroll = stickinator;
