@@ -33,7 +33,7 @@ if (photos.length > 0) {
 
 if (morePhotos.length > 0) {
     let morePhotoNums = uniqueRands(1,9,morePhotos.length);
-    morePhotos.forEach(item => item.style.backgroundImage = `url(images/${morePhotoNums.pop()}.jpg)`);
+    morePhotos.forEach(item => item.style.backgroundImage = `url(images/${morePhotoNums.pop()}s.jpg)`);
 }
 
 if (hero) {         
