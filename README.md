@@ -7,7 +7,7 @@ There is no content, but if there were, it might look quite lovely in this.
 
 View here: (https://jeremyrrose.github.io/museum-of-disposable-art/article.html)
 
-![demonstration gif](http://jeremy-rose.com/images/moda-desktop-480.gif "Tour of MoDA on desktop browser")
+![demonstration](moda-desktop-480.gif)
 
 ## Languages
 * HTML
